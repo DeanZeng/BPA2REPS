@@ -50,17 +50,17 @@ public class GridBPA {
         Boolean ACflag = false;
         Boolean Lflag  = false;
         Boolean Tflag  = false;
-        for (int i = 0; i < cardTypes.length; i++) {
-            if (cardTypes[i].compareTo("AC")==0){
+        for (String cardType : cardTypes) {
+            if (cardType.equals("AC")) {
                 ACflag=true;
             }
-            if (cardTypes[i].compareTo("B")==0){
+            if (cardType.equals("B")) {
                 Bflag=true;
             }
-            if (cardTypes[i].compareTo("L")==0){
+            if (cardType.equals("L")) {
                 Lflag=true;
             }
-            if (cardTypes[i].compareTo("T")==0){
+            if (cardType.equals("T")) {
                 Tflag=true;
             }
         }
