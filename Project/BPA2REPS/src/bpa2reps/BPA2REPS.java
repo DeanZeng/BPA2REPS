@@ -173,6 +173,7 @@ class Grid{
          int areaID = 0, zoneID = 0, busID = 0, loadID = 0, genID = 0, lineID = 0, tieID = 0;
          for (ACcard acd : bpaGrid.accardArray) {
            areaID++;
+           zoneID=0;
             areaTable.add(new Area(areaID, acd.areaName));
             for (int i = 0; i < acd.zoneNo; i++) {
                 zoneID++;
@@ -181,8 +182,8 @@ class Grid{
             }
         }
         areaTable.add(new Area(areaID + 1, "其他"));
-        zoneTable.add(new Zone(zoneID + 1, areaID + 1, "其他"));
-        zoneName_ID.put("其他", new ZoneTableKey(zoneID + 1,areaID + 1));
+        zoneTable.add(new Zone( 1, areaID + 1, "其他"));
+        zoneName_ID.put("其他", new ZoneTableKey(1,areaID + 1));
         
         for (Bcard bcd : bpaGrid.bcardArray) {
             busID++;
@@ -205,7 +206,7 @@ class Grid{
          
             ZoneTableKey line_zone1 = zoneName_ID.get(line_bus1.zone);
             ZoneTableKey line_zone2 = zoneName_ID.get(line_bus2.zone);
-            if (!line_zone1.equals(line_zone2) ) {
+            if (line_zone1.areaID!=line_zone2.areaID) {
                 tieID++;
                 tielineTable.add(new Tieline(tieID, line_zone1.areaID, line_zone2.areaID, line_bus1.name, line_bus2.name, line_bus1.kV));
             } 
