@@ -58,11 +58,11 @@ public class BPA2REPS {
             
             // zone sheet
             label = new Label(0,0,"分区编号");
-            areaSheet.addCell(label);
+            zoneSheet.addCell(label);
             label = new Label(1,0,"区域编号");
-            areaSheet.addCell(label);
+            zoneSheet.addCell(label);
             label = new Label(2,0,"分区名称");
-            areaSheet.addCell(label);
+            zoneSheet.addCell(label);
             row=1;        
             for (Zone zone :bpaGrid.zoneTable){
                 number = new jxl.write.Number(0, row, zone.getZoneId());
@@ -76,17 +76,17 @@ public class BPA2REPS {
             
             // generator sheet
             label = new Label(0,0,"发电机编号");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             label = new Label(1,0,"节点名");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             label = new Label(2,0,"电压等级");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             label = new Label(3,0,"分区编号");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             label = new Label(4,0,"额定容量");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             label = new Label(5,0,"机组类型");
-            areaSheet.addCell(label);
+            generatorSheet.addCell(label);
             row=1;        
             for (Generator generator :bpaGrid.generatorTable){
                 number = new jxl.write.Number(0, row, generator.getId());
@@ -106,17 +106,17 @@ public class BPA2REPS {
             
              // tieline sheet
             label = new Label(0,0,"序号");
-            areaSheet.addCell(label);
+            tielineSheet.addCell(label);
             label = new Label(1,0,"区域1编号");
-            areaSheet.addCell(label);
+            tielineSheet.addCell(label);
             label = new Label(2,0,"区域2编号");
-            areaSheet.addCell(label);
+            tielineSheet.addCell(label);
             label = new Label(3,0,"节点1名称");
-            areaSheet.addCell(label);
+            tielineSheet.addCell(label);
             label = new Label(4,0,"节点2名称");
-            areaSheet.addCell(label);
-            label = new Label(3,0,"电压等级");
-            areaSheet.addCell(label);
+            tielineSheet.addCell(label);
+            label = new Label(5,0,"电压等级");
+            tielineSheet.addCell(label);
             row=1;        
             for (Tieline tieline :bpaGrid.tielineTable){
                 number = new jxl.write.Number(0, row, tieline.getId());
