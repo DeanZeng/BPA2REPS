@@ -99,7 +99,7 @@ public class BPA2REPS {
                 generatorSheet.addCell(number);
                 number = new jxl.write.Number(4, row, generator.getAreaId());
                 generatorSheet.addCell(number);
-                label = new Label(1, row, generator.getUnitType());
+                label = new Label(5, row, generator.getUnitType());
                 generatorSheet.addCell(label);
                 row++;
             }
