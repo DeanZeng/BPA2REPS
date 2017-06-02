@@ -83,9 +83,11 @@ public class BPA2REPS {
             generatorSheet.addCell(label);
             label = new Label(3,0,"分区编号");
             generatorSheet.addCell(label);
-            label = new Label(4,0,"额定容量");
+            label = new Label(4,0,"区域编号");
             generatorSheet.addCell(label);
-            label = new Label(5,0,"机组类型");
+            label = new Label(5,0,"额定容量");
+            generatorSheet.addCell(label);
+            label = new Label(6,0,"机组类型");
             generatorSheet.addCell(label);
             row=1;        
             for (Generator generator :bpaGrid.generatorTable){
@@ -99,7 +101,9 @@ public class BPA2REPS {
                 generatorSheet.addCell(number);
                 number = new jxl.write.Number(4, row, generator.getAreaId());
                 generatorSheet.addCell(number);
-                label = new Label(5, row, generator.getUnitType());
+                number = new jxl.write.Number(5, row, generator.getRateMW());
+                generatorSheet.addCell(number);
+                label = new Label(6, row, generator.getUnitType());
                 generatorSheet.addCell(label);
                 row++;
             }
